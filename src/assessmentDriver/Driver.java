@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import algorithmDataScheme.BubbleSortDataScheme;
 import algorithmDataScheme.FindMaxInArrayDataScheme;
 import algorithmDataScheme.GeneralDataScheme;
+import algorithmDataScheme.MergeSortDataScheme;
 import algorithmInterface.IAlgorithm;
 import algorithmSampler.AlgoSamplerFactory;
 import algorithmSampler.AlgorithmSampler;
@@ -100,6 +101,9 @@ public class Driver {
 				break;
 			case 2:
 				algoData = new Gson().fromJson(br, BubbleSortDataScheme.class);  // parse
+				break;
+			case 3:
+				algoData = new Gson().fromJson(br, MergeSortDataScheme.class);  // parse
 				break;
 			default:
 				break;
