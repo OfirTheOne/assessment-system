@@ -63,6 +63,8 @@ public class ComplexityAssessmentAlgo {
 					for(int k = 0; k < algorithmSamples.size(); k++) {
 						algorithmSamples.get(k).iterations.remove(i);
 					}
+					polyCountersSize--;
+					i--;
 				}
 			}
 		}

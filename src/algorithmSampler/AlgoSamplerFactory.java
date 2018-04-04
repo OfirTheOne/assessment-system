@@ -12,6 +12,7 @@ public class AlgoSamplerFactory {
 			break;
 		case 2:
 			sampler = new BubbleSortSampler(algoData);
+			break;
 		case 3:
 			sampler = new MergeSortSampler(algoData);
 			break;
