@@ -17,7 +17,7 @@ public class AlgoSamplerFactory {
 			sampler = new MergeSortSampler(algoData);
 			break;
 		case 4:
-			sampler = new MergeSortSampler(algoData);
+			sampler = new BinarySearchSampler(algoData);
 			break;
 		case 5:
 			sampler = new InsertElementInBinTreeSampler(algoData);
