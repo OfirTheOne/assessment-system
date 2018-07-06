@@ -19,20 +19,20 @@ public class FindMaxInArraySampler implements AlgorithmSampler {
 	public SamplerResult<Integer> samplingProcess(IAlgorithm algoInst) {
 		SamplerResult<Integer> samplerResult = new SamplerResult<Integer>();
 
-		Integer rounds = algoData.inputs.length;
+		Integer rounds = algoData.inputs.size();
 		FindMaxInArrayAlgorithm curAlgoInst = (FindMaxInArrayAlgorithm)algoInst;
 		
 		ArrayList<Integer> results = new ArrayList<Integer>();
 		ArrayList<AlgorithmSample> samples = new ArrayList<AlgorithmSample>();
 		
 		for(int i = 0; i < rounds; i++) {
-			int size = algoData.inputs[i].length;
+			int size = algoData.inputs.get(i).length;
 			Integer[] array = new Integer[size]; // whan reading from json the inputs is double (??)
-			System.arraycopy(algoData.inputs[i], 0, array, 0, array.length);
+			System.arraycopy(algoData.inputs.get(i), 0, array, 0, array.length);
 			
 			Integer res = curAlgoInst.findMaxInArray(array);
 			results.add(res);
-			AlgorithmSample sample = new AlgorithmSample(algoData.inputSizes[i], curAlgoInst.analyzerCounters.__counters);
+			AlgorithmSample sample = new AlgorithmSample(algoData.inputSizes.get(i), curAlgoInst.analyzerCounters.__counters);
 			samples.add(sample);
 			curAlgoInst.analyzerCounters.flushCounters();
 		}

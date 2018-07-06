@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
+import algorithmDataScheme.BinarySearchDataScheme;
 import algorithmDataScheme.BubbleSortDataScheme;
 import algorithmDataScheme.FindMaxInArrayDataScheme;
 import algorithmDataScheme.GeneralDataScheme;
@@ -104,6 +105,12 @@ public class Driver {
 				break;
 			case 3:
 				algoData = new Gson().fromJson(br, MergeSortDataScheme.class);  // parse
+				break;
+			case 4:
+				algoData = new Gson().fromJson(br, BinarySearchDataScheme.class);  // parse
+				break;
+			case 5:
+				algoData = new Gson().fromJson(br, FindMaxInArrayDataScheme.class);  // parse
 				break;
 			default:
 				break;

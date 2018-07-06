@@ -16,6 +16,12 @@ public class AlgoSamplerFactory {
 		case 3:
 			sampler = new MergeSortSampler(algoData);
 			break;
+		case 4:
+			sampler = new MergeSortSampler(algoData);
+			break;
+		case 5:
+			sampler = new InsertElementInBinTreeSampler(algoData);
+			break;			
 		default:
 			break;
 		}

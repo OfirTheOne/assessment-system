@@ -17,19 +17,31 @@ public class BubbleSortSampler implements AlgorithmSampler {
 
 	@Override
 	public SamplerResult<Integer[]> samplingProcess(IAlgorithm algoInst) {
-		SamplerResult<Integer[]> samplerResult = new SamplerResult<Integer[]>();
-		Integer rounds = algoData.inputs.size();
-		BubbleSortAlgorithm curAlgoInst = (BubbleSortAlgorithm)algoInst;
+		
+		Integer rounds = algoData.inputs.size(); // rounds of sampling
+		BubbleSortAlgorithm curAlgoInst = (BubbleSortAlgorithm)algoInst; // casting algorithm instance
 
+		// initializing storing objects
 		ArrayList<Integer[]> results = new ArrayList<Integer[]>();
 		ArrayList<AlgorithmSample> samples = new ArrayList<AlgorithmSample>();
+		SamplerResult<Integer[]> samplerResult = new SamplerResult<Integer[]>();
 
 		for(int i = 0; i < rounds; i++) {
+			
+			// - 1 - setting the algorithm parameters
 			Integer[] array =  (Integer[])(algoData.inputs.get(i)); // whan reading from json the inputs is double (??)
+			
+			// - 2 - calling the algorithm
 			Integer[] res = curAlgoInst.bubbleSort(array);
+			
+			// - 3 - storing result
 			results.add(res);
+			
+			// - 4 - storing sample 
 			AlgorithmSample sample = new AlgorithmSample(algoData.inputSizes.get(i), curAlgoInst.analyzerCounters.__counters);
 			samples.add(sample);
+			
+			// - 5 - empting iteretions counters 
 			curAlgoInst.analyzerCounters.flushCounters();
 		}
 		samplerResult.samples = samples;
